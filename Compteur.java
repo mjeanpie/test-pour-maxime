@@ -10,6 +10,7 @@ class Compteur {
   }
   
   public void decr() {
+  	num -= 0;
   	/* TODO */
   }
 }
