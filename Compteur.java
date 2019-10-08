@@ -1,15 +1,20 @@
 class Compteur {
-  private int num;
-  
-  public Compteur() {
-    num = 0;
-  }
-  
-  public void incr() {
-    num += 1;
-  }
-  
-  public void decr() {
-    /* TODO */
-  }
+    private  /*@ spec_public @*/ int num;
+    //@ public invariant num >= 0 && num <= Integer.MAX_VALUE;
+
+    //@ ensures num == 0;
+    public Compteur() {
+        num = 0;
+    }
+
+    //@ ensures num > 0;
+    public void incr() {
+        if (num < Integer.MAX_VALUE)
+            num += 1;
+    }
+
+    //@ ensures num >= 0;
+    public void decr() {
+        /* TODO */
+    }
 }
